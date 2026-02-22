@@ -1,0 +1,141 @@
+:root {
+  --bg: #f6f8ff;
+  --surface: #ffffff;
+  --ink: #101631;
+  --muted: #566180;
+  --primary: #3f5fff;
+  --primary-dark: #2f4ce2;
+  --accent: #e7ecff;
+  --dark: #111936;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+}
+.container { width: min(1120px, 92vw); margin: 0 auto; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(246, 248, 255, 0.88);
+  border-bottom: 1px solid #e4e9fb;
+  z-index: 50;
+}
+.nav-wrap {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand { font-size: 1.2rem; font-weight: 800; color: var(--ink); text-decoration: none; }
+nav { display: flex; gap: 18px; }
+nav a, .site-footer a { color: var(--muted); text-decoration: none; font-weight: 500; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary { border: 1px solid #c7d1ff; color: var(--primary); }
+.btn.block { width: 100%; }
+
+.hero { padding: 4rem 0; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
+.eyebrow { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; }
+h1 { font-size: clamp(2rem, 3.3vw, 3.4rem); line-height: 1.1; margin: 0.25rem 0 1rem; }
+.subtitle { color: var(--muted); font-size: 1.05rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 1.5rem 0; }
+.trust-list { display: flex; gap: 16px; padding: 0; margin: 0; list-style: none; color: var(--muted); font-size: 0.95rem; }
+
+.hero-card {
+  background: var(--surface);
+  border: 1px solid #e4e9fb;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 34px rgba(16, 22, 49, 0.08);
+  padding: 1.2rem;
+}
+.hero-card img { width: 100%; border-radius: 14px; margin: 0.8rem 0; }
+.badge {
+  display: inline-block;
+  padding: 0.32rem 0.65rem;
+  background: var(--accent);
+  color: var(--primary);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.strike { text-decoration: line-through; color: #8f96b0; margin-left: 0.4rem; }
+
+section { padding: 4rem 0; }
+.section-light { background: #fff; }
+.section-dark { background: var(--dark); color: #f2f4ff; }
+h2 { font-size: clamp(1.5rem, 2.4vw, 2.35rem); margin: 0 0 1rem; }
+
+.benefit-grid,
+.review-grid,
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.benefit-grid article,
+.review-grid blockquote,
+.pricing-cards article {
+  margin: 0;
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  border: 1px solid #e8ebf8;
+  background: var(--surface);
+}
+.review-grid cite { display: block; margin-top: 0.9rem; font-style: normal; color: #59658b; font-weight: 600; }
+
+.shop-grid { display: grid; gap: 20px; }
+.pricing-cards article { background: #1c2752; border-color: #324079; color: #f2f4ff; }
+.pricing-cards .featured { outline: 2px solid #7f94ff; transform: translateY(-4px); }
+.price { font-size: 1.6rem; font-weight: 800; margin: 0.2rem 0; }
+
+.site-footer { padding: 2rem 0; border-top: 1px solid #e4e9fb; }
+.footer-wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; color: var(--muted); }
+.footer-wrap div { display: flex; gap: 14px; }
+
+.page-main { min-height: calc(100vh - 160px); padding: 3rem 0 5rem; }
+.panel {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e4e9fb;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+label { display: block; font-weight: 600; margin: 0.8rem 0 0.3rem; }
+input, textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d8dff7;
+  padding: 0.75rem;
+  font: inherit;
+}
+textarea { min-height: 140px; resize: vertical; }
+.helper { color: var(--muted); font-size: 0.95rem; }
+
+@media (max-width: 880px) {
+  nav { display: none; }
+  .hero-grid,
+  .benefit-grid,
+  .review-grid,
+  .pricing-cards { grid-template-columns: 1fr; }
+}
