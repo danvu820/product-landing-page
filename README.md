@@ -1,4 +1,4 @@
-# Velora pillow landing page
+# Neruva pillow landing page
 
 A lightweight static website for a premium pillow product brand, inspired by modern editorial DTC layouts.
 
