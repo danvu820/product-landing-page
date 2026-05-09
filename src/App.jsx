@@ -24,7 +24,7 @@ export default function App() {
     <div className="page">
       <div className="ticker">Mother&apos;s Day Sale is Live! • Get An Extra 20% Off Sitewide • Plus Free Shipping on orders over $100 •</div>
       <header className="nav wrap">
-        <nav className="links"><a>Home</a><a>Shop</a><a>About</a><a>Features</a><a>Ambassadors</a></nav>
+        <nav className="links" aria-label="Primary"><a href="#">Home</a><a href="#">Shop</a><a href="#">About</a><a href="#">Features</a><a href="#">Ambassadors</a></nav>
         <div className="logo">mellow</div>
         <div className="bag">◡</div>
       </header>
@@ -46,7 +46,7 @@ export default function App() {
 
       <section className="section wrap">
         <h3>Shop by Bestsellers</h3>
-        <a className="shopall">Shop All</a>
+        <a className="shopall" href="#">Shop All</a>
         <div className="cards">
           {products.map((p) => (
             <article key={p.name}>
